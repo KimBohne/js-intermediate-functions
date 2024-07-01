@@ -2,9 +2,34 @@
 // maar ook een manier moeten vinden om hetgeen dat je verzamelt ergens te bundelen. Op deze manier zul je ontdekken hoe je omgaat met scope. Pak vooral het hoofdstuk op EdHub over for-loops er nog eens bij!
 // Tip: je mag hier geen ingebouwde object methoden gebruiken, dus daar hoef je niet naar te kijken.
 
-const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
-console.log(grades);
-/* Opdracht  1: Cum Laude */
+// const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
+
+
+// uitwerking 1a---------------------------------------------------
+ let studentGrades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
+console.log("het eindcijfer is: " + studentGrades);
+
+function isCumLaude(grade) {
+    return grade >= 8;
+}
+
+function countCumLaudeStudents(grades) {
+    let cumLaudeCount = 0;
+
+    for (let i = 0; i < grades.length; i++) {
+        if (isCumLaude(grades[i])) {
+            cumLaudeCount++;
+        }
+    }
+    return cumLaudeCount;
+}
+
+// let cumLaudeCount = countCumLaudeStudents(studentGrades);
+// console.log("Aantal diploma's cum laude: " + cumLaudeCount);
+
+
+
+
 
 /* 1a: Script schrijven  */
 // De administratie moet weten hoeveel studenten er dit blok cum laude zijn afgestudeerd (8 of hoger). Daar moeten namelijk speciale diploma's voor besteld worden.
@@ -17,10 +42,35 @@ console.log(grades);
 // ---- Verwachte uitkomst: 6
 
 
+
+
+
 /*  1b: Omschrijven tot een herbruikbare functie   */
 // Schrijf een functie genaamd cumLaude, die een array van cijfers verwacht (zoals grades) en het aantal Cum laude studenten teruggeeft. Gebruik hiervoor jouw antwoord van 1a.
 // Zorg ervoor dat jouw functie ook werkt als we een andere array met eindcijfers willen checken, zoals bijvoorbeeld: [6, 4, 5] of [8, 9, 4, 6, 10].
 // Log het antwoord in de terminal.
+
+// uitwerking 1b-----------------------------/
+
+function cumLaude(grades){
+    const cumLaudeGrades = grades.filter(grade => grade >= 8);
+    return cumLaudeGrades.length;
+
+}
+
+let cumLaudeCount1 = cumLaude([9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6]);
+console.log(cumLaudeCount1);
+
+let  cumLaudeCount2 = cumLaude([6, 4, 5]);
+console.log(cumLaudeCount2);
+
+let cumLaudeCount3 =cumLaude([8, 9, 4, 6, 10]);
+console.log(cumLaudeCount3);
+
+cumLaude([9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6])
+cumLaude([6, 4, 5])
+cumLaude([8, 9, 4, 6, 10])
+// -------------------------------------------------------------------
 
 // ---- Verwachte uitkomsten:
 // cumLaude(grades) geeft 6
@@ -30,7 +80,7 @@ console.log(grades);
 
 
 
-/* Opdracht  2: Gemiddeld cijfer */
+/* Opdracht 2: Gemiddeld cijfer */
 
 /* 2a: Script schrijven  */
 // De studenten-administratie moet ieder blok opnieuw berekenen wat het gemiddelde eindcijfer is, maar we beginnen met de grades array van hierboven.
@@ -41,8 +91,28 @@ console.log(grades);
 // Log het antwoord in de terminal.
 
 // ---- Verwachte uitkomst: 6.642857142857143
+let grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
+let total = 0;
 
+for (let i = 0; i < grades.length; i++) {
+    total += grades[i];
+}
+console.log(total);
 
+function averageGrade (grades) {
+    let total = 0; // Definieer een lokale variabele voor de som van de cijfers binnen de functie
+    for (let i = 0; i < grades.length; i++) {
+        total += grades[i];
+    }
+    const averageGradeStudent = total / grades.length;
+    return Math.round(averageGradeStudent * 100) / 100;
+}
+
+let averageGradeStudent1 = averageGrade([6, 4, 5]);
+console.log(averageGradeStudent1);
+
+let averageGradeStudent2 = averageGrade([8, 9, 4, 6, 10]);
+console.log(averageGradeStudent2);
 /* 2b: Omschrijven tot een herbruikbare functie */
 // Schrijf een functie genaamd averageGrade, die een array van cijfers verwacht (zoals grades) en het gemiddelde cijfer teruggeeft. Gebruik hiervoor jouw antwoord van 2a.
 // Zorg ervoor dat jouw functie ook werkt als we een andere array willen checken, zoals bijvoorbeeld: [6, 4, 5] of [8, 9, 4, 6, 10].
@@ -58,7 +128,17 @@ console.log(grades);
 // Zorg ervoor dat het gemiddelde cijfer dat wordt teruggegeven uit de functie netjes wordt afgerond op twee decimalen.
 // Tip: Google is your best friend!
 
+// Voorbeeld array van cijfers
+let grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 
+// Berekening van het totaal van de oorspronkelijke grades array
+let total = 0;
+for (let i = 0; i < grades.length; i++) {
+    total += grades[i];
+}
+console.log(total); // Logt het totaal
+
+// Functie om het gemiddelde cijfer te berekenen en af te ronden op twee decimalen
 
 
 /* Bonusopdracht: hoogste cijfer */
