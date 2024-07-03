@@ -24,8 +24,8 @@ function countCumLaudeStudents(grades) {
     return cumLaudeCount;
 }
 
-// let cumLaudeCount = countCumLaudeStudents(studentGrades);
-// console.log("Aantal diploma's cum laude: " + cumLaudeCount);
+let cumLaudeCount = countCumLaudeStudents(studentGrades);
+console.log("Aantal diploma's cum laude: " + cumLaudeCount);
 
 
 
@@ -91,20 +91,23 @@ cumLaude([8, 9, 4, 6, 10])
 // Log het antwoord in de terminal.
 
 // ---- Verwachte uitkomst: 6.642857142857143
-let grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
+
+
+// uitwerking 2 a en 2b------------------------------------------------
+let grades2 = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 let total = 0;
 
-for (let i = 0; i < grades.length; i++) {
-    total += grades[i];
+for (let i = 0; i < grades2.length; i++) {
+    total += grades2[i];
 }
 console.log(total);
 
-function averageGrade (grades) {
+function averageGrade (grades2) {
     let total = 0; // Definieer een lokale variabele voor de som van de cijfers binnen de functie
-    for (let i = 0; i < grades.length; i++) {
-        total += grades[i];
+    for (let i = 0; i < grades2.length; i++) {
+        total += grades2[i];
     }
-    const averageGradeStudent = total / grades.length;
+    const averageGradeStudent = total / grades2.length;
     return Math.round(averageGradeStudent * 100) / 100;
 }
 
@@ -113,6 +116,7 @@ console.log(averageGradeStudent1);
 
 let averageGradeStudent2 = averageGrade([8, 9, 4, 6, 10]);
 console.log(averageGradeStudent2);
+
 /* 2b: Omschrijven tot een herbruikbare functie */
 // Schrijf een functie genaamd averageGrade, die een array van cijfers verwacht (zoals grades) en het gemiddelde cijfer teruggeeft. Gebruik hiervoor jouw antwoord van 2a.
 // Zorg ervoor dat jouw functie ook werkt als we een andere array willen checken, zoals bijvoorbeeld: [6, 4, 5] of [8, 9, 4, 6, 10].
@@ -123,20 +127,26 @@ console.log(averageGradeStudent2);
 // averageGrade([6, 4, 5]) geeft 5
 // averageGrade([8, 9, 4, 6, 10]) geeft 7.4
 
+// uitwerking 2b----------------------------------------------
+let averageGradeStudent3 = averageGrade([6, 4, 5]);
+console.log(averageGradeStudent3);
 
+let averageGradeStudent4 = averageGrade([8, 9, 4, 6, 10]);
+console.log(averageGradeStudent4);
+// ----------------------------------------------------------------------
 /* 2c: Afronden op twee decimalen */
 // Zorg ervoor dat het gemiddelde cijfer dat wordt teruggegeven uit de functie netjes wordt afgerond op twee decimalen.
 // Tip: Google is your best friend!
 
 // Voorbeeld array van cijfers
-let grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
-
-// Berekening van het totaal van de oorspronkelijke grades array
-let total = 0;
-for (let i = 0; i < grades.length; i++) {
-    total += grades[i];
-}
-console.log(total); // Logt het totaal
+// let grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
+//
+// // Berekening van het totaal van de oorspronkelijke grades array
+// let total2 = 0;
+// for (let i = 0; i < grades.length; i++) {
+//     total2 += grades[i];
+// }
+// console.log(total2); // Logt het totaal
 
 // Functie om het gemiddelde cijfer te berekenen en af te ronden op twee decimalen
 
