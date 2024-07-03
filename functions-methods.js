@@ -35,7 +35,7 @@ function typOfEmail (mailAddress) {
     if (domainName === "novi-education.nl") {
         return "student";
     } else if (domainName === "novi.nl") {
-        return "mederwerker";
+        return "medewerker";
     } else {
         return "extern";
     }
